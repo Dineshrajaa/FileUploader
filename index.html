@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Uploader</title>
+	<style type="text/css">
+	.piclass{
+		width: 200px;
+		height: 200px;
+		display: block;
+	}
+	</style>
+	<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){	
+			$("#picker").change(function(event){
+				//When the user picks an file the Change event is triggered
+			var picPath=URL.createObjectURL(event.target.files[0]);
+			$("#imageBanner").append("<img src='"+picPath+"' class='piclass'/>");//Print the Picture in the Imagebanner.
+			//You have to handle the picPath to store it in an array
+		});
+	});
+	
+	</script>
+</head>
+<body>
+	<input type="file" accept="image/*" id="picker" />
+	<input type="button" value="Submit" id="subtn" /><br/>
+	<div id="imageBanner"></div>
+</body>
+</html>
